@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ApiController;
 use App\Http\Controllers\CheckController;
 use App\Http\Controllers\StripeController;
 use App\Http\Controllers\LanguageController;
@@ -35,4 +36,7 @@ Route::get('/check/subscribe', [CheckController::class, 'subscribe'])->name('che
 //GOOGLE AUTH
 Route::get('login/google', [GoogleController::class, 'redirectToGoogle'])->name('login.google');
 Route::get('login/google/callback', [GoogleController::class, 'handleGoogleCallback']);
+
+Route::get('/{email}/check', [ApiController::class, 'check'])->name('api.check');
+
 require __DIR__.'/auth.php';

@@ -8,14 +8,14 @@
         href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap"
         rel="stylesheet"
     />
-    <link rel="stylesheet" href="{{ asset('css/reset.css')}}" />
-    <link rel="stylesheet" href="{{ asset('css/profile.css')}}" />
+    <link rel="stylesheet" href="{{ asset('css/reset.css')}}"/>
+    <link rel="stylesheet" href="{{ asset('css/profile.css')}}"/>
 </head>
 <body>
 <header>
     <nav>
         <div class="nav__logo">
-            <img src="{{ asset('img/logo.svg')}}" alt="" />
+            <img src="{{ asset('img/logo.svg')}}" alt=""/>
         </div>
         <div class="nav__button">
             <button href="#">Log out</button>
@@ -32,13 +32,13 @@
                 </li>
                 <li class="sidebar__setting" menu-item id="settings">
                     <span class="img" id="settings"></span>
-                    <span class="text"id="settings">Settings</span>
+                    <span class="text" id="settings">Settings</span>
                 </li>
                 <li class="sidebar__support" menu-item id="support">
-                    <span class="img"  id="support"></span>
-                    <span class="text"  id="support">Support</span>
+                    <span class="img" id="support"></span>
+                    <span class="text" id="support">Support</span>
                 </li>
-                <li class="sidebar_affiliation" menu-item  id="affiliation">
+                <li class="sidebar_affiliation" menu-item id="affiliation">
                     <span class="img" id="affiliation"></span>
                     <span class="text" id="affiliation">Affiliation</span>
                 </li>
@@ -49,11 +49,17 @@
         <section class="plan" id="subscription">
             <div class="main__container">
                 <h2>My plan</h2>
-                <p>Base</p>
-                <a href="{{route('payment.base')}}">Purchase subscription</a>
-                <br>
-                <p>Premium</p>
-                <a href="{{route('payment.premium')}}">Purchase subscription</a>
+                @if (auth()->user()->subscribed())
+                    <p>{{auth()->user()->plan()->name . '  is active until  ' .auth()->user()->dateFinish()}}</p>
+                @else
+                    <p>Base</p>
+                    <a href="{{route('payment.base')}}">Purchase subscription</a>
+                    <br>
+                    <p>Premium</p>
+                    <a href="{{route('payment.premium')}}">Purchase subscription</a>
+                @endif
+
+
             </div>
         </section>
         <section class="settings hidden" id="settings">
@@ -64,25 +70,25 @@
                     <form method="post" action="{{route('profile.update')}}">
                         @csrf
                         <p class="placeholder">Name</p>
-                        <input type="text" name="name" value="{{auth()->user()->name}}" />
+                        <input type="text" name="name" value="{{auth()->user()->name}}"/>
                         <button type="submit" class="change">Change</button>
                     </form>
                     <form method="post" action="{{route('profile.update')}}">
                         @csrf
                         <p class="placeholder">Phone</p>
-                        <input type="tel" name="phone" value="{{auth()->user()->phone}}" />
+                        <input type="tel" name="phone" value="{{auth()->user()->phone}}"/>
                         <button type="submit" class="change">Change</button>
                     </form>
                     <form method="post" action="{{route('profile.update')}}">
                         @csrf
                         <p class="placeholder">Email</p>
-                        <input type="email" value="{{auth()->user()->email}}" disabled  />
+                        <input type="email" value="{{auth()->user()->email}}" disabled/>
                         <button class="change"></button>
                     </form>
                     <form method="post" action="{{route('profile.update')}}">
                         @csrf
                         <p class="placeholder">New Password</p>
-                        <input type="password" />
+                        <input type="password"/>
                         <button type="submit" class="change">Change</button>
                     </form>
                 </div>
@@ -90,12 +96,12 @@
                 <div>
                     <form>
                         <p class="placeholder">Telegram</p>
-                        <input type="text" value="Not connected" class="c-red" />
+                        <input type="text" value="Not connected" class="c-red"/>
                         <a href="" class="change">Connect</a>
                     </form>
                     <form>
                         <p class="placeholder">Google</p>
-                        <input type="text" value="Not connected" class="c-red" />
+                        <input type="text" value="Not connected" class="c-red"/>
                         <a href="" class="change">Connect</a>
                     </form>
                 </div>
@@ -114,17 +120,17 @@
                         <form action="">
                             <div>
                                 <p class="placeholder">You name</p>
-                                <input type="text" value="Art Kor" />
+                                <input type="text" value="Art Kor"/>
                                 <a href="" class="change"></a>
                             </div>
                             <div>
                                 <p class="placeholder">Your Email</p>
-                                <input type="text" value="example@gmail.com" disabled  />
+                                <input type="text" value="example@gmail.com" disabled/>
                                 <a href="" class="change"></a>
                             </div>
                             <div>
                                 <p class="placeholder">Your phone</p>
-                                <input type="text" />
+                                <input type="text"/>
                                 <a href="" class="change"></a>
                             </div>
                             <button class="support__button">Submit</button>

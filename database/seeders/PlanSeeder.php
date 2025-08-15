@@ -15,7 +15,7 @@ class PlanSeeder extends Seeder
     {
         $plans = [
             ['name' => 'Base', 'stripe_plan_id' => 'prod_Sp8I7oGqzEhz00', 'stripe_price_id' => 'price_1RtU28PdC3ct7d1dIeRtf7JG'],
-            ['name' => 'Premium', 'stripe_plan_id' => '1', 'stripe_price_id' => '1']
+            ['name' => 'Premium', 'stripe_plan_id' => 'prod_Sp8Iod72rv6Wmp', 'stripe_price_id' => 'price_1RtU2OPdC3ct7d1drZ3roxM4']
         ];
         foreach ($plans as $plan) {
             Plan::create($plan);

@@ -46,8 +46,11 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
-    public function getPlanName() {
-        return Plan::where('stripe_plan_id', $this->subscription()->items->first()->id)->first()->name;
+    public function plan() {
+        return Plan::where('stripe_price_id', $this->subscription()->items->first()->stripe_price)->first();
 //        return "Base";
+    }
+    public function dateFinish() {
+        return $this->subscription()->items->first()->updated_at->addDays(30)->format('Y-m-d H:i:s');
     }
 }
