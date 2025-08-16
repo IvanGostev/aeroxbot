@@ -31,6 +31,7 @@ class ApiController extends Controller
 
         if ($all['password'] = 'jdBsJLTP9Sh8n2pr') {
             $data['plan_id'] = Plan::where('name', ucfirst($all['status']))->first()->id;
+            $data['user_id'] = User::where('email', $all['email'])->first()->id;
             $data['end'] = Carbon::parse($all['date'])->toDateString();
 //2018-06-15 17:34:15.984512
             $cbp = CryptoBotPayment::create($data);

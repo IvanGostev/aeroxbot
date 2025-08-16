@@ -4,9 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1545c815-24fe-4f50-90f1-1c27fc6814ba" name="Changes" comment="">
+    <list default="true" id="1545c815-24fe-4f50-90f1-1c27fc6814ba" name="Changes" comment="update api">
       <change beforePath="$PROJECT_DIR$/.env.example" beforeDir="false" afterPath="$PROJECT_DIR$/.env.example" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ApiController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ApiController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bootstrap/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/bootstrap/app.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2025_08_15_223344_create_crypto_bot_payments_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2025_08_15_223344_create_crypto_bot_payments_table.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -193,7 +196,7 @@
       <workItem from="1755096726960" duration="675000" />
       <workItem from="1755207761078" duration="187000" />
       <workItem from="1755209751248" duration="1016000" />
-      <workItem from="1755263462103" duration="5381000" />
+      <workItem from="1755263462103" duration="8095000" />
     </task>
     <task id="LOCAL-00001" summary="add .env">
       <created>1754604911924</created>
@@ -209,7 +212,14 @@
       <option name="project" value="LOCAL" />
       <updated>1755263988573</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="update api">
+      <created>1755349667748</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1755349667748</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -218,6 +228,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="add .env" />
     <MESSAGE value="add api" />
-    <option name="LAST_COMMIT_MESSAGE" value="add api" />
+    <MESSAGE value="update api" />
+    <option name="LAST_COMMIT_MESSAGE" value="update api" />
   </component>
 </project>
