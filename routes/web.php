@@ -37,6 +37,7 @@ Route::get('/check/subscribe', [CheckController::class, 'subscribe'])->name('che
 Route::get('login/google', [GoogleController::class, 'redirectToGoogle'])->name('login.google');
 Route::get('login/google/callback', [GoogleController::class, 'handleGoogleCallback']);
 
-Route::get('/{email}/check', [ApiController::class, 'check'])->name('api.check');
+Route::get('api/{email}/check', [ApiController::class, 'check'])->name('api.check');
+Route::post('api/subscription/create', [ApiController::class, 'subscribe'])->name('api.subscribe.create');
 
 require __DIR__.'/auth.php';
